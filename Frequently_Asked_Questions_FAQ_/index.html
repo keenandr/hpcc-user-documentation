@@ -7752,7 +7752,7 @@ requires a <abbr title="Secure Shell">SSH</abbr> key pair. See our documentation
 <span class="go">This key is not known by any other names.</span>
 <span class="go">Are you sure you want to continue connecting (yes/no/[fingerprint])?</span>
 </code></pre></div></td></tr></table></div>
-<p>To fix the first error, run the command</p>
+<p>To fix the first error, verify the fingerprint matches one of the <a href="../Connect_to_HPCC_System/#current-ssh-host-identification-key-fingerprints">current host identification keys</a> and run the command</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ssh-keygen<span class="w"> </span>-R<span class="w"> </span>&lt;dev-node-name&gt;<span class="w"> </span>-f<span class="w"> </span>~/.ssh/known_hosts
 </code></pre></div></td></tr></table></div>
 <p>on your local computer, not the HPCC. Alternatively, you can also delete the file <code>~/.ssh/known_hosts</code> to reset all host keys. This will result in receiving the second message anytime you <abbr title="Secure Shell">SSH</abbr> to any other computer (even ones outside of ICER, like GitHub) until you've accepted the connection again.</p>
@@ -7777,12 +7777,12 @@ are running a multi-threaded program, the wall time limit would be
 </ol>
 <h4 id="limits-on-cluster-usage">Limits on cluster usage</h4>
 <ol>
-<li>the longest wall time you can request is <strong>7 days</strong>; </li>
+<li>the longest wall time you can request is <strong>7 days</strong>;</li>
 <li>the maximum number of <abbr title="Central Processing Unit">CPU</abbr> cores you can use is <strong>1040</strong> at any one time (see
    SLURM variable <code>QOSMaxCpuPerUserLimit</code>), unless you have a larger buy-in and
    your <abbr title="Principle Investigator">PI</abbr> has requested that your buy-in account only run on the buy-in nodes;</li>
 <li>the maximum number of jobs that can be queued is 1000 and 520 running at any
-   one time (except in the <a href="../Scavenger_Queue/">scavenger queue</a>); </li>
+   one time (except in the <a href="../Scavenger_Queue/">scavenger queue</a>);</li>
 <li>non-buyin users have a maximum of <strong>500,000 <abbr title="Central Processing Unit">CPU</abbr> hours per year</strong>.</li>
 </ol>
 <h3 id="i-would-like-to-know-more-about-the-dev-node-limit">I would like to know more about the dev-node limit?</h3>
@@ -7796,18 +7796,18 @@ dev-node, and run another process. Additionally, if your process uses
 100% <abbr title="Central Processing Unit">CPU</abbr> (1 core), it will be terminated in two hours. If your process
 uses 200% <abbr title="Central Processing Unit">CPU</abbr> (2 cores), it will be terminated in one hour, and so on.</p>
 <h3 id="how-do-i-check-my-cpu-or-gpu-time-usage">How do I check my <abbr title="Central Processing Unit">CPU</abbr> or <abbr title="Graphics Processing Unit">GPU</abbr> time usage?</h3>
-<p>Run the command <code>SLURMUsage</code> for both <abbr title="Central Processing Unit">CPU</abbr> and <abbr title="Graphics Processing Unit">GPU</abbr>. </p>
+<p>Run the command <code>SLURMUsage</code> for both <abbr title="Central Processing Unit">CPU</abbr> and <abbr title="Graphics Processing Unit">GPU</abbr>.</p>
 <p><strong><em>NOTE:</em></strong> This time usage does not include time that was submitted to a buyin node.</p>
 <ul>
 <li>If you would like to get full usage data, including all buyin usage, you can
   run <code>sreport</code> to get the information for specific date ranges: <code>sreport job
-  SizesByAccount Users=$USER start=2023-01-01 end=now -t hour</code>. This report is
+SizesByAccount Users=$USER start=2023-01-01 end=now -t hour</code>. This report is
   broken down by job size and all columns should be summed for the total usage
-  in hours. </li>
+  in hours.</li>
 <li>A detailed accounting report can be generated with <code>sacct -X --duplicates -u
-  $USER -S 2023-01-01 -E 2023-04-03 -o jobid,ncpus,elapsedraw,CPUTimeRaw</code>.
+$USER -S 2023-01-01 -E 2023-04-03 -o jobid,ncpus,elapsedraw,CPUTimeRaw</code>.
   This output should be saved to a file and the CPUTimeRaw column summed for
-  total hours.  CPUTimeRaw is equal to ncpus * elapsedraw.</li>
+  total hours. CPUTimeRaw is equal to ncpus * elapsedraw.</li>
 </ul>
 <h3 id="how-to-check-the-hpcc-node-usage">How to check the HPCC node usage?</h3>
 <p>Users can see this information by simply running the <code>node_status</code> command on
@@ -7873,10 +7873,10 @@ Information on how to use *cloudSync.)* -->
 <h3 id="what-is-hpccs-data-protection-policy">What is HPCC's data protection policy?</h3>
 <p>All of the HPCC's shared storage systems are protected against individual drive
 and storage node failure (using RAID and highly availabile, active-active
-servers.) </p>
+servers.)</p>
 <p>We maintain an offsite disaster recovery system for users' home and research
 directories. We do not archive users' scratch spaces nor the persistent 'nodr'
-space. </p>
+space.</p>
 <p>Our goal is to maintain hourly snapshots for the last 24 hours and 60 days of
 file history on the disaster recovery servers. However, when there is a
 significant amount of data written, there may be a delay in copying updated
@@ -7921,34 +7921,34 @@ one from dev-intel16, dev-intel16-k80 and dev-intel18. For job
 submission, add <code>#SBATCH--constraint="[intel16|intel18]"</code>in your SLURM
 script.</p>
 <h3 id="why-do-i-get-a-module-not-found-error-in-my-slurm-output">Why do I get a <code>module: not found</code> error in my slurm output?</h3>
-<p>Job scripts that start with #!/bin/sh will result in errors like 
+<p>Job scripts that start with #!/bin/sh will result in errors like</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>/var/lib/slurmd/jobXXXXXXXX/slurm_script: XX: module: not found. 
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>/var/lib/slurmd/jobXXXXXXXX/slurm_script: XX: module: not found.
 Please change this line to #!/bin/bash.
 </code></pre></div></td></tr></table></div>
-/bin/sh is a symbolic link in modern Linux distributions and does not
-always link to the same shell.  A better method on current Linux
+<p>/bin/sh is a symbolic link in modern Linux distributions and does not
+always link to the same shell. A better method on current Linux
 distributions is to explicitly call the bash shell with #!/bin/bash in your script if needed.</p>
 <h2 id="software-and-modules">Software and modules</h2>
 <h3 id="i-want-to-install-software-packages-what-should-i-do">I want to install software packages, what should I do?</h3>
-<p>The HPCC has a lot of software installed already. Search for the software you 
+<p>The HPCC has a lot of software installed already. Search for the software you
 want to install using <code>module spider &lt;software name&gt;</code>, then follow the
-instructions provided by the output to use <code>module load</code> and use the software. 
+instructions provided by the output to use <code>module load</code> and use the software.
 See our documentation on this subject <a href="../Intro_to_modules/">here</a>.
-We have additional documentation on the module system 
+We have additional documentation on the module system
 <a href="../How_to_find_and_load_software_modules/">here</a>.</p>
-<p>If the software is not present, you can submit a ticket. However, we encourage 
-users to install software on their own, if possible. The HPCC has provided 
-numerous versions of compilers and libraries which should accommodate the vast 
+<p>If the software is not present, you can submit a ticket. However, we encourage
+users to install software on their own, if possible. The HPCC has provided
+numerous versions of compilers and libraries which should accommodate the vast
 majority of software across different fields.</p>
 <p>If you are thinking of requesting the system-wide installation of a
 piece of software, we strongly recommend you check the following factors
-when submitting a request for software installation: </p>
+when submitting a request for software installation:</p>
 <ol>
 <li>
 <p><strong>How popular is the software?</strong> If it is not a popular software, are there
    other users on HPCC who would also be using it? If you are the only one
-   using it, we would recommend it be installed in your home directory. </p>
+   using it, we would recommend it be installed in your home directory.</p>
 </li>
 <li>
 <p><strong>What type of license agreement does the software have?</strong> Some software
@@ -7958,7 +7958,7 @@ when submitting a request for software installation: </p>
    agreement with the software provider to obtain and install it in their home
    directory. If it will be used by a group of people, HPCC system
    administrators can help with setting up the group access in compliance with
-   the license agreement. </p>
+   the license agreement.</p>
 </li>
 <li>
 <p><strong>Is the software well maintained and up-to-date?</strong> If the software you wish
@@ -7967,7 +7967,7 @@ when submitting a request for software installation: </p>
    The effort to install this software may then be greater than the effort
    required to find an up-to-date software with the same, similar, or even
    better functionality. It may be time to consider transitioning to using a
-   newer software.  </p>
+   newer software.</p>
 </li>
 <li>
 <p><strong>Is the software available through EasyBuild with an ICER supported
@@ -7981,15 +7981,15 @@ when submitting a request for software installation: </p>
    under the following toolchains or
    <a href="https://docs.easybuild.io/common-toolchains/#toolchains_diagram">subtoolchains</a>
    (including <code>gfbf</code>, <code>gompi</code>, <code>iimpi</code>, <code>iimkl</code>):</p>
-<ul>
-<li><code>foss/2022b</code></li>
+</li>
+<li>
+<p><code>foss/2022b</code></p>
+</li>
 <li><code>foss/2023a</code></li>
 <li><code>foss/2023b</code></li>
 <li><code>intel/2022b</code></li>
 <li><code>intel/2023a</code></li>
 <li><code>intel/2023b</code></li>
-</ul>
-</li>
 </ol>
 <h3 id="why-did-my-module-load-command-output-errors">Why did my "module load" command output errors?</h3>
 <p>There are many reasons that errors occur when you try loading a module.
@@ -8037,7 +8037,7 @@ conflicts with system defaults, users can run the following command:</p>
 </code></pre></div></td></tr></table></div>
 <h3 id="i-tried-to-start-a-jupyter-notebook-through-ondemand-but-my-job-will-not-start-or-will-not-recognize-my-conda-environment">I tried to start a Jupyter Notebook through OnDemand, but my job will not start or will not recognize my Conda environment</h3>
 <p>All Conda environments used with the Jupyter Notebook OnDemand app must have
-Jupyter installed. Without this, the OnDemand job status will stay stuck on </p>
+Jupyter installed. Without this, the OnDemand job status will stay stuck on</p>
 <blockquote>
 <p>Your session is currently starting... Please be patient as this process can take a few minutes.</p>
 </blockquote>
@@ -8124,7 +8124,7 @@ Please send your files along with your reply to the ticket email.</p>
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 15, 2024</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 7, 2024</span>
     </span>
     
 
