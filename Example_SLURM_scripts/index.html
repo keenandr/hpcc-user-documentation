@@ -6644,7 +6644,9 @@ How an executable should be run and the resources required depends on the detail
 <span class="normal">36</span>
 <span class="normal">37</span>
 <span class="normal">38</span>
-<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash --login</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash --login</span>
 <span class="c1"># Job name:</span>
 <span class="c1">#SBATCH --job-name=Rscript</span>
 
@@ -6671,6 +6673,8 @@ How an executable should be run and the resources required depends on the detail
 <span class="c1"># Standard output and error to file</span>
 <span class="c1"># %x: job name, %j: job ID</span>
 <span class="c1">#SBATCH --output=%x-%j.SLURMout</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This script is from ICER&#39;s example SLURM scripts&quot;</span>
 
 <span class="c1"># Purge current modules and load those we require</span>
 module<span class="w"> </span>purge
@@ -6737,7 +6741,9 @@ PyTorch to define and train a neural network. The script loads our conda environ
 <span class="normal">42</span>
 <span class="normal">43</span>
 <span class="normal">44</span>
-<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash --login</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash --login</span>
 <span class="c1"># Job name:</span>
 <span class="c1">#SBATCH --job-name=pytorch</span>
 
@@ -6771,6 +6777,8 @@ PyTorch to define and train a neural network. The script loads our conda environ
 <span class="c1"># Standard output and error to file</span>
 <span class="c1"># %x: job name, %j: job ID</span>
 <span class="c1">#SBATCH --output=%x-%j.SLURMout</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This script is from ICER&#39;s example SLURM scripts&quot;</span>
 
 module<span class="w"> </span>load<span class="w"> </span>Conda/3
 conda<span class="w"> </span>activate<span class="w"> </span>myenv
@@ -6826,7 +6834,9 @@ js<span class="w"> </span>-j<span class="w"> </span><span class="nv">$SLURM_JOB_
 <span class="normal">37</span>
 <span class="normal">38</span>
 <span class="normal">39</span>
-<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash --login</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash --login</span>
 <span class="c1"># Job name:</span>
 <span class="c1">#SBATCH --job-name=python-pool</span>
 
@@ -6855,6 +6865,8 @@ js<span class="w"> </span>-j<span class="w"> </span><span class="nv">$SLURM_JOB_
 <span class="c1"># Standard output and error to file</span>
 <span class="c1"># %x: job name, %j: job ID</span>
 <span class="c1">#SBATCH --output=%x-%j.SLURMout</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This script is from ICER&#39;s example SLURM scripts&quot;</span>
 
 module<span class="w"> </span>load<span class="w"> </span>Conda/3
 conda<span class="w"> </span>activate<span class="w"> </span>myenv
@@ -6923,7 +6935,9 @@ setting <code>OMP_NUM_THREADS</code> <strong>will override</strong> any options 
 <span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
-<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash --login</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash --login</span>
 <span class="c1"># Job name:</span>
 <span class="c1">#SBATCH --job-name=openmp-threaded</span>
 
@@ -6955,6 +6969,8 @@ setting <code>OMP_NUM_THREADS</code> <strong>will override</strong> any options 
 <span class="c1"># Standard output and error to file</span>
 <span class="c1"># %x: job name, %j: job ID</span>
 <span class="c1">#SBATCH --output=%x-%j.SLURMout</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This script is from ICER&#39;s example SLURM scripts&quot;</span>
 
 <span class="c1"># Purge current modules and load those we require</span>
 module<span class="w"> </span>purge
@@ -7019,7 +7035,9 @@ of processes to be used for the job.</p>
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash --login</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash --login</span>
 <span class="c1"># Job name:</span>
 <span class="c1">#SBATCH --job-name=mpi-parallel</span>
 
@@ -7048,6 +7066,8 @@ of processes to be used for the job.</p>
 <span class="c1"># Standard output and error to file</span>
 <span class="c1"># %x: job name, %j: job ID</span>
 <span class="c1">#SBATCH --output=%x-%j.SLURMout</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This script is from ICER&#39;s example SLURM scripts&quot;</span>
 
 <span class="c1"># Purge current modules and load those we require</span>
 module<span class="w"> </span>purge
@@ -7118,7 +7138,9 @@ setting <code>OMP_NUM_THREADS</code> <strong>will override</strong> any options 
 <span class="normal">43</span>
 <span class="normal">44</span>
 <span class="normal">45</span>
-<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash --login</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="ch">#!/bin/bash --login</span>
 <span class="c1"># Job name:</span>
 <span class="c1">#SBATCH --job-name=mpi-hybrid</span>
 
@@ -7150,6 +7172,8 @@ setting <code>OMP_NUM_THREADS</code> <strong>will override</strong> any options 
 <span class="c1"># Standard output and error to file</span>
 <span class="c1"># %x: job name, %j: job ID</span>
 <span class="c1">#SBATCH --output=%x-%j.SLURMout</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This script is from ICER&#39;s example SLURM scripts&quot;</span>
 
 <span class="c1"># Purge current modules and load those we require</span>
 module<span class="w"> </span>purge
@@ -7209,7 +7233,7 @@ js<span class="w"> </span>-j<span class="w"> </span><span class="nv">$SLURM_JOB_
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 29, 2024</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 24, 2024</span>
     </span>
     
 
