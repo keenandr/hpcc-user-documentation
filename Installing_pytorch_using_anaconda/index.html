@@ -6468,14 +6468,14 @@
 
 <h1 id="installing-pytorchpytorch-lightning-using-conda">Installing Pytorch/Pytorch Lightning Using Conda</h1>
 <p>This guide will walk you through installing Pytorch and/or Pytorch Lighting using conda. It assumes you have already
-installed either Miniforge. See the guide on <a href="../Using_conda/">using conda</a> for more.</p>
+installed or loaded Miniforge. See the guide on <a href="../Using_conda/">using conda</a> for more.</p>
 <h2 id="setup-checking-python">Setup - Checking Python</h2>
 <p>If you installed conda on your own and not following our <a href="../Using_conda/">using conda</a> guide,
 the HPCC may be trying to use the system python installation instead of your own. To test if this is
 the case, run
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>which<span class="w"> </span>python
 </code></pre></div></td></tr></table></div>
-If the output starts with <code>/opt/software</code>, you will need to run <code>module unload Python</code>. If the output starts with the path to your Miniforge, you don't need to do anything else.</p>
+If the output starts with <code>/opt/software</code>, you will need to run <code>module unload Python</code>. If the output starts with the path to Miniforge, you don't need to do anything else.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you are affected by the above issue, you will have to run <code>module unload Python</code> every time you
@@ -6551,7 +6551,7 @@ wish to use your own python installation. You may wish to add the <code>module u
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 26, 2024</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 7, 2024</span>
     </span>
     
 
