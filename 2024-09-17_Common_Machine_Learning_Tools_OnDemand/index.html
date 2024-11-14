@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#common-machine-learning-tools-tensorflow-keras-scikit-learn-on-ondemand" class="md-skip">
+        <a href="#common-machine-learning-tools-tensorflow-keras-scikit-learn-pytorch-on-ondemand" class="md-skip">
           Skip to content
         </a>
       
@@ -6514,6 +6514,15 @@
       
     
     
+      <a href="../tags/#pytorch" class="md-tag md-tag-icon">PyTorch</a>
+    
+  
+    
+    
+      
+      
+    
+    
       <a href="../tags/#cuda" class="md-tag md-tag-icon">CUDA</a>
     
   
@@ -6535,8 +6544,8 @@
 Please keep this in mind as you read and use the content. Please pay close attention to the date, version
 information and other details.</p>
 </div>
-<h1 id="common-machine-learning-tools-tensorflow-keras-scikit-learn-on-ondemand">Common Machine Learning Tools (TensorFlow, Keras, scikit-learn) on OnDemand</h1>
-<p>This lab notebook discusses the installation and usage of common machine learning tools (TensorFlow, Keras, and scikit-learn) in Jupyter Notebooks through the HPCC's OnDemand interface. It is mostly oriented towards students in the fall 2024 section of CMSE 492-001 or CMSE 802-001 using the <a href="../Using_the_Data_Machine/">Data Machine</a>, but will hopefully be useful to a general audience.</p>
+<h1 id="common-machine-learning-tools-tensorflow-keras-scikit-learn-pytorch-on-ondemand">Common Machine Learning Tools (TensorFlow, Keras, scikit-learn, PyTorch) on OnDemand</h1>
+<p>This lab notebook discusses the installation and usage of common machine learning tools (TensorFlow, Keras, scikit-learn, and PyTorch) in Jupyter Notebooks through the HPCC's OnDemand interface. It is mostly oriented towards students in the fall 2024 section of CMSE 492-001 or CMSE 802-001 using the <a href="../Using_the_Data_Machine/">Data Machine</a>, but will hopefully be useful to a general audience.</p>
 <h2 id="usage-instructions">Usage instructions</h2>
 <p>We recommend using a Conda environment including the above tools through a Jupyter notebook. To do so, visit <a href="https://ondemand.hpcc.msu.edu">ICER's OnDemand portal</a> and <a href="https://ondemand.hpcc.msu.edu/pun/sys/dashboard/batch_connect/sys/bc_icer_jupyter_ubuntu/session_contexts/new">click the Jupyter app</a>.</p>
 <h3 id="enter-resource-request">Enter resource request</h3>
@@ -6570,15 +6579,17 @@ ssh<span class="w"> </span>dev-amd20-v100
 </code></pre></div></td></tr></table></div>
 <h3 id="install-packages">Install packages</h3>
 <p>The next step is to get access to <a href="../Using_conda/">Conda</a>. Using the <code>Miniforge3</code> module, create a new environment and install the required packages from NVIDIA. Note that even though all of the packages are installed using <code>pip</code>, we still create a Conda environment as this works best with OnDemand.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code>module purge
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code>module purge
 module load Miniforge3 CUDA
 conda create -n ml
 conda activate ml
@@ -6587,6 +6598,8 @@ python -m pip install tensorflow[and-cuda]
 python -m pip install cupy-cuda12x
 python -m pip install scikit-learn
 python -m pip install jupyter
+python -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+python -m pip install torcheval
 </code></pre></div></td></tr></table></div>
 <!--
   Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
@@ -6632,7 +6645,7 @@ python -m pip install jupyter
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 7, 2024</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 14, 2024</span>
     </span>
     
 
