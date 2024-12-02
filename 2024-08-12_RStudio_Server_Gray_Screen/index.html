@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rstudio-server-shows-blank-or-gray-screen" class="md-skip">
+        <a href="#rstudio-server-shows-blank-or-gray-screen-or-error-status-code-502" class="md-skip">
           Skip to content
         </a>
       
@@ -6446,10 +6446,10 @@
 Please keep this in mind as you read and use the content. Please pay close attention to the date, version
 information and other details.</p>
 </div>
-<h1 id="rstudio-server-shows-blank-or-gray-screen">RStudio Server Shows Blank or Gray Screen</h1>
+<h1 id="rstudio-server-shows-blank-or-gray-screen-or-error-status-code-502">RStudio Server Shows Blank or Gray Screen, or error "Status code 502"</h1>
 <p>When using RStudio Server through OnDemand, some users have found that the job will start normally, but when connecting from OnDemand, a tab with a blank or gray screen shows up instead of RStudio Server. Sometimes, RStudio Server will load successfully from this screen. Please <strong>wait at least a full minute on this screen</strong> before proceeding to the solution below.</p>
 <h2 id="resolving">Resolving</h2>
-<p>However, if you notice that the gray screen persists after one minute of waiting, it is possible that RStudio Server is stuck trying to load. As a workaround, sometimes reloading the tab and waiting another minute can work.</p>
+<p>However, if you notice that the gray screen persists after one minute of waiting, or you receive the error "Status code 502 returned by RStudio Server when executing 'client_init'" it is possible that RStudio Server is stuck trying to load. As a workaround, sometimes reloading the tab and waiting another minute can work.</p>
 <p>Otherwise, clearing RStudio's temporary files stored at <code>~/.local/share/rstudio</code> can fix the issue. <strong>Note that this will likely reset your RStudio session, so you may need to reopen previous projects and files and could lose any unsaved work.</strong></p>
 <p>To do this, we recommend moving the files to a backup using a command like</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>mv<span class="w"> </span>~/.local/share/rstudio<span class="w"> </span>~/.local/share/rstudio.backup
@@ -6505,7 +6505,7 @@ information and other details.</p>
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 12, 2024</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 2, 2024</span>
     </span>
     
 
@@ -6525,11 +6525,11 @@ information and other details.</p>
     <span class="md-source-file__fact">
         <span class="md-icon" title="Contributors">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"/></svg>
             
         </span>
         <nav>
-            Craig Gross
+            Andrew Fullard, Craig Gross
         </nav>
     </span>
     
