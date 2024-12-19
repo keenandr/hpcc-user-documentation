@@ -987,6 +987,32 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resetting_Known_Hosts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Resetting SSH Host Keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -7795,20 +7821,7 @@ requires a <abbr title="Secure Shell">SSH</abbr> key pair. See our documentation
 <span class="go">Host key for dev-amd20 has changed and you have requested strict checking.</span>
 <span class="go">Host key verification failed.</span>
 </code></pre></div></td></tr></table></div>
-<p>or:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">The authenticity of host &#39;dev-amd20 (&lt;no hostip for proxy command&gt;)&#39; can&#39;t be established.</span>
-<span class="go">RSA key fingerprint is SHA256:rydhZ58BeXsXgWQisWlbH6E0IFG+2+LSxC9a7OfZBro.</span>
-<span class="go">This key is not known by any other names.</span>
-<span class="go">Are you sure you want to continue connecting (yes/no/[fingerprint])?</span>
-</code></pre></div></td></tr></table></div>
-<p>To fix the first error, verify the fingerprint matches one of the <a href="../Connect_to_HPCC_System/#current-ssh-host-identification-key-fingerprints">current host identification keys</a> and run the command</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ssh-keygen<span class="w"> </span>-R<span class="w"> </span>&lt;dev-node-name&gt;<span class="w"> </span>-f<span class="w"> </span>~/.ssh/known_hosts
-</code></pre></div></td></tr></table></div>
-<p>on your local computer, not the HPCC. Alternatively, you can also delete the file <code>~/.ssh/known_hosts</code> to reset all host keys. This will result in receiving the second message anytime you <abbr title="Secure Shell">SSH</abbr> to any other computer (even ones outside of ICER, like GitHub) until you've accepted the connection again.</p>
-<p>To accept the new connection and fix the second error, enter "yes" and hit enter.</p>
+<p>To fix this error, please see <a href="../Resetting_Known_Hosts/">this page</a>.</p>
 <h3 id="can-i-use-hpc-through-web-browsers">Can I use HPC through web browsers?</h3>
 <p>Yes, we provide Open OnDemand, a web portal for easy web access to the HPCC.
 Check out <a href="../Open_OnDemand/">this tutorial</a>.</p>
@@ -8179,7 +8192,7 @@ Please send your files along with your reply to the ticket email.</p>
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 13, 2024</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2024</span>
     </span>
     
 
@@ -8203,7 +8216,7 @@ Please send your files along with your reply to the ticket email.</p>
             
         </span>
         <nav>
-            Andrew Fullard, Craig Gross, Keen, Andrew, Nanye Long, Ryan, Joseph, Yongjun Choi
+            Andrew Fullard, Claire Kopenhafer, Craig Gross, Keen, Andrew, Nanye Long, Ryan, Joseph, Yongjun Choi
         </nav>
     </span>
     

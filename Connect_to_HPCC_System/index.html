@@ -938,7 +938,7 @@
   <a href="#current-ssh-host-identification-key-fingerprints" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current ssh host identification key fingerprints
+        Current SSH host identification key fingerprints
       
     </span>
   </a>
@@ -1072,6 +1072,32 @@
     
   
     SSH keys
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Resetting_Known_Hosts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    
+  
+    Resetting SSH Host Keys
   
 
     
@@ -6460,7 +6486,7 @@
   <a href="#current-ssh-host-identification-key-fingerprints" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current ssh host identification key fingerprints
+        Current SSH host identification key fingerprints
       
     </span>
   </a>
@@ -6546,7 +6572,11 @@
 <h2 id="connect-to-the-gateway">Connect to the gateway</h2>
 <p>Open the <a href="../install_ssh_client/"><abbr title="Secure Shell">SSH</abbr> client</a> on your local computer and run <code>ssh -XY &lt;username&gt;@hpcc.msu.edu</code>, where <code>&lt;username&gt;</code> should be your HPCC account name. <strong>The first time you connect</strong>, <abbr title="Secure Shell">SSH</abbr> will ask if you trust the <abbr title="Secure Shell">SSH</abbr> key fingerprint of the HPCC. After validating it is one of the current fingerprints listed below, type <code>yes</code> and press enter to continue. <abbr title="Secure Shell">SSH</abbr> will prompt for your password. Please type the password of your MSU NetID (the password will be invisible). Upon a successful login, you will see a welcome message and current usage load for each development node.</p>
 <p><strong>Our gateway is for entrance to the HPCC system only</strong>. Running programs and other tasks should be done on development nodes (see the next section).</p>
-<h3 id="current-ssh-host-identification-key-fingerprints">Current ssh host identification key fingerprints</h3>
+<h3 id="current-ssh-host-identification-key-fingerprints">Current <abbr title="Secure Shell">SSH</abbr> host identification key fingerprints</h3>
+<p>When connecting to a gateway node for the first time,
+please confirm the host key fingerprint against the list below.</p>
+<p>Be advised that these fingerprints are for the <strong>only</strong> for the gateway nodes. 
+If you use <a href="../An_SSH_tunneling_via_multiple_hops/"><abbr title="Secure Shell">SSH</abbr> proxy jumping</a> to directly connect to a development node, you will be presented with a hostkey not listed below.</p>
 <ul>
 <li><code>SHA256:tALdkdMnzJUbJpCIkfgfcnWk1G/q9F1kx/miC3b3f4I</code> - 2024 RSA</li>
 <li><code>SHA256:Z+I9j5o0+P93y8e4vW+wsk41ZQCVapg5q1wfYnHxVag</code> - 2025 ED25519</li>
@@ -6613,7 +6643,7 @@ XAuthLocation<span class="w"> </span>/opt/X11/bin/xauth
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 7, 2024</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 13, 2024</span>
     </span>
     
 
