@@ -6486,8 +6486,10 @@
 
 
 <h1 id="slurm-changes-to-srun-for-jobs-with-multiple-cpus-per-task">SLURM --- Changes to <code>srun</code> for jobs with multiple CPUs per task</h1>
-<p>.. note:
-   As of ICER's update of the HPCC's <a href="../SLURM_overview/">SLURM scheduling system</a> to version 24.05, srun has reverted to its behavior prior to the 23.02 update.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>As of ICER's update of the HPCC's <a href="../SLURM_overview/">SLURM scheduling system</a> to version 24.05, srun has reverted to its behavior prior to the 23.02 update.</p>
 <p>ICER has recently updated the HPCC's <a href="../SLURM_overview/">SLURM scheduling system</a> to version 23.02. With this update comes a change to the behavior of <code>srun</code> that affects jobs using multiple cores per task.</p>
 <p>Take the following SLURM job script as an example. Here we request 5 tasks (or processes) where each tasks is being executed by 2 CPUs, for a total of 10 CPUs:
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
