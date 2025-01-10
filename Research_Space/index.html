@@ -1861,6 +1861,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backups
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limit-on-number-of-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limit on number of files
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6464,6 +6486,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#backups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backups
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limit-on-number-of-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limit on number of files
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -6522,7 +6566,7 @@
 
 <h1 id="research-space">Research Space</h1>
 <p>A research group's central directory, or <em>research space</em>, is a shared directory established by a MSU Principal Investigator (<abbr title="Principle Investigator">PI</abbr>) for use by the members of the <abbr title="Principle Investigator">PI</abbr>'s research group.</p>
-<p>To create a research space the <abbr title="Principle Investigator">PI</abbr> must submit a <a href="https://contact.icer.msu.edu/research">Research Request</a> form. The initial limit on storage is <strong>50GB</strong> and the initial limit on the number of files contained in a research space is <strong>1,000,000 files</strong>. A <abbr title="Principle Investigator">PI</abbr> may request an increase in storage of up to 1TB of space at no cost by submitting a <a href="https://contact.icer.msu.edu/quota">Quota Increase Request</a> form or an increase beyond 1TB or 1 million files for an annual fee by submitting a
+<p>To create a research space the <abbr title="Principle Investigator">PI</abbr> must submit a <a href="https://contact.icer.msu.edu/research">Research Request</a> form. The initial limit on storage is <strong>250GB</strong> and the initial limit on the number of files contained in a research space is <strong>1,000,000 files</strong>. A <abbr title="Principle Investigator">PI</abbr> may request an increase in storage of up to 3TB of space at no cost by submitting a <a href="https://contact.icer.msu.edu/quota">Quota Increase Request</a> form or an increase beyond 3TB or 3 million files for an annual fee by submitting a
 <a href="https://contact.icer.msu.edu/large_quota">Large Quota Increase Request</a> form. Use the <code>quota</code> command to check a research group's current space and file quotas.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -6599,6 +6643,16 @@ to ensure that:</p>
 <p>If the file is to be created, the primary group of the user creating the file is set to that of the research space</p>
 </li>
 </ul>
+<h2 id="backups">Backups</h2>
+<p>All research directories are stored in the IBM General Parallel File
+System (<abbr title="General Parallel File System">GPFS</abbr>). It is automatically backed up
+except files saved in the <code>nodr</code> space. To restore any file from backup,
+please submit a ticket and let us know the paths to the files or the
+directory with the time frame you would like them restored.</p>
+<h2 id="limit-on-number-of-files">Limit on number of files</h2>
+<p>Besides the quota on the size of space, users are also limited to 1 million files in their research directory. We need to set this limit because with a great number of files the file system will spend too much time on backups to be able to function normally. If possible, users can compress many files into one to reduce the file number.</p>
+<p>If users do not wish to have the limit, the <abbr title="Principle Investigator">PI</abbr> can request to have a portion of their research space moved under nodr space /mnt/ufs18/nodr/research/ by submitting a help ticket with the drop-down subject 'other' and secondary subject 'nodr request'. There is no limit on the file count, but there is no backup of these files either. Users will be responsible for their own backup of files in the nodr space.</p>
+<p>By default, one half of the current research quota is assigned to the requested nodr space. The original quota under /mnt/research/ is then reduced to half the original quota so the total space quota remains the same. A different size of nodr space can also be assigned based on the <abbr title="Principle Investigator">PI</abbr>'s request. Once this space is created, the path and the quota information on both research and nodr space can be found using quota command mentioned above.</p>
 <!--
   Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6643,7 +6697,7 @@ to ensure that:</p>
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2024</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2025</span>
     </span>
     
 

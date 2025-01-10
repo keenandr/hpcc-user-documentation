@@ -6584,27 +6584,16 @@ though this shorthand may not work in some scripts.
 By default, it is only accessible to the user.  It is often referred to as the “home
 directory” since this is the beginning directory after login of any HPCC
 node.</p>
-<p>Every home space starts with a <strong>50 <abbr title="Gigabyte">GB</abbr></strong> limit for file storage space
+<p>Every home space starts with a <strong>100 <abbr title="Gigabyte">GB</abbr></strong> limit for file storage space
 and can not contain more than <strong>1 million files</strong>. To check the quota and used space of
 your home directory, see the <a href="#space-quota">Space quota</a> section. 
-You can request to increase your quota up to 1TB by completing
-<a href="https://contact.icer.msu.edu/quota">Quota Increase Request</a> form. 
-Storage space greater than 1TB is available
-for an annual fee paid through a MSU financial account. Users can find
-the fee and submit their request by completing the
-<a href="https://contact.icer.msu.edu/large_quota">Large Quota Increase Request</a> form. 
- If you would like to store more than 1 million files in your home space, please refer
-to the section <a href="#limit-on-number-of-files">Limit on number of files</a>.</p>
-<p>All home directories are stored in the IBM General Parallel File
-System (<abbr title="General Parallel File System">GPFS</abbr>). It is automatically backed up
-except files saved in the <code>nodr</code> space. To restore any file from backup,
-please submit a ticket and let us know the paths to the files or the
-directory with the time frame you would like them restored.</p>
-<p>For the system security and user data privacy, we recommend that
+Storage space greater than 100GB will require the use of a <a href="../Research_Space/">research space</a>. If you would like to store more than 1 million files in a research space, please refer to the section <a href="#limit-on-number-of-files">Limit on number of files</a>.</p>
+<p>All home directories are stored in the VAST filesystem. It is automatically backed up with local snapshots. To restore any file from backup, change into the .snapshot directory and locate the timestamp directory that has the file version you want.  Copy the file from this location into another location in your home directory.</p>
+<p>For system security and user data privacy, we recommend that
 users do NOT open home directory access permission to others. When you
 report an issue about files saved in home, please attach them to your
-message for reference. ICER staff cannot access any files or
-directories in your home directory.</p>
+message for reference. ICER staff will not access any files or
+directories in your home directory without explicit permission.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Currently our home file system check quota function will sometimes cause
@@ -6648,27 +6637,24 @@ many small files.</p>
 limit because, with a great number of files, the file system will spend
 too much time on backups to be able to function normally. If possible,
 users can compress many files into one to reduce the file number.</p>
-<p>If users do not wish to have the limit, they can request to have
-a portion of their home quota (or research space) moved under <code>nodr</code> space
-(<code>/mnt/ufs18/nodr/home/</code> or <code>/mnt/ufs18/nodr/research/</code>) by submitting a 
+<p>If users do not wish to have the limit, the <abbr title="Principle Investigator">PI</abbr> can request to have
+a portion of their research space moved under <code>nodr</code> space
+<code>/mnt/ufs18/nodr/research/</code> by submitting a 
 <strong><a href="https://contact.icer.msu.edu/contact">help ticket</a></strong> 
 with the drop-down subject 'other' and secondary subject 'nodr request'.  There is no
 limit on the file count, but there is no backup of these files either. 
 <strong>Users will be responsible for their own backup of files in the <code>nodr</code> space.</strong></p>
-<p>By default, one half of the current home quota is assigned to the
+<p>By default, one half of the current research quota is assigned to the
 requested <code>nodr</code> space. The original quota under
-<code>/mnt/home/</code> (or <code>/mnt/research/</code>) is then reduced to half the original quota so the
+<code>/mnt/research/</code> is then reduced to half the original quota so the
 total space quota remains the same. A different size of <code>nodr</code> space can
-also be assigned based on the user's request. Once this space is
-created, the path and the quota information on both home and nodr space 
+also be assigned based on the <abbr title="Principle Investigator">PI</abbr>'s request. Once this space is
+created, the path and the quota information on both research and nodr space 
 can be found using <strong><code>quota</code></strong> command mentioned above.</p>
 <h2 id="backups">Backups</h2>
 <p>All home space files are periodically, automatically backed up (except 
-those files that a user has opted to store in a specially requested 
-<strong><code>nodr</code></strong> space). To access file backups, please submit a 
-<strong><a href="https://contact.icer.msu.edu/contact">help ticket</a></strong>
-containing the file paths and the period, i.e. the time frame, from 
-which the files should be restored.  </p>
+those files that a user has opted to store in a previously requested legacy 
+<strong><code>nodr</code></strong> space). To access file backups, change into the .snapshot directory and find the timestamped directory that contains the version you want.  Copy the file from this location into another location in your home directory.</p>
 <!--
   Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
 
@@ -6713,7 +6699,7 @@ which the files should be restored.  </p>
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 7, 2024</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2025</span>
     </span>
     
 
