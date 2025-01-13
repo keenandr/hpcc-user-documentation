@@ -1822,23 +1822,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Space quota">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#actual-disk-usage-du-different-from-quota-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Actual disk usage (du) different from quota results
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -6479,23 +6462,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Space quota">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#actual-disk-usage-du-different-from-quota-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Actual disk usage (du) different from quota results
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -6594,14 +6560,6 @@ users do NOT open home directory access permission to others. When you
 report an issue about files saved in home, please attach them to your
 message for reference. ICER staff will not access any files or
 directories in your home directory without explicit permission.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Currently our home file system check quota function will sometimes cause
-a user's directory over the quota due to incorrect calculation of used
-space.  If you see this please open a ticket and we will work with you
-to temporarily increase your quota.  We continue to work with our vendor
-to correct this issue.</p>
-</div>
 <h2 id="space-quota">Space quota</h2>
 <p>The only way to get quota information of home space is to run the
 command <code>quota</code>:</p>
@@ -6622,22 +6580,21 @@ If "Free" or "Available" is a negative value (such as the "Space Available"
 column in the above example), the usage is over the quota,
 please remove, transfer or compress some files so the used space or the
 file count can be lower than the "Quota" value.</p>
-<h3 id="actual-disk-usage-du-different-from-quota-results">Actual disk usage (<code>du</code>) different from quota results</h3>
-<p>The <abbr title="General Parallel File System">GPFS</abbr> system set the smallest file block size to 64KiB. This
-means that files between 2KiB and 64KiB will occupy 64KiB of space. This
-causes space usage to be greatly inflated for users with large amounts of
-small files. One suggested solution would be to compress many small
-files into one large file (larger than 64KiB). In this way, the number of
-files can also be reduced. If you still have any difficulty, a
-temporarily larger quota can be requested if your quota is at 1TB with
-many small files.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Currently our home file system check quota function will sometimes cause
+a user's directory over the quota due to incorrect calculation of used
+space.  If you see this please open a ticket and we will work with you
+to temporarily increase your quota.  We continue to work with our vendor
+to correct this issue.</p>
+</div>
 <h2 id="limit-on-number-of-files">Limit on number of files</h2>
 <p>Besides the quota on the size of space, users are also limited to
 1 million files in their home directory. We need to set this
 limit because with a great number of files the file system will spend
 too much time on backups to be able to function normally. If possible,
 users can compress many files into one to reduce the file number.</p>
-<p>If users do not wish to have the limit, the <abbr title="Principle Investigator">PI</abbr> can request to have
+<p>If users do not wish to have the limit, then nodr research space should be used.  The <abbr title="Principle Investigator">PI</abbr> can request to have
 a portion of their research space moved under <code>nodr</code> space
 <code>/mnt/ufs18/nodr/research/</code> by submitting a 
 <strong><a href="https://contact.icer.msu.edu/contact">help ticket</a></strong> 
@@ -6699,7 +6656,7 @@ those files that a user has opted to store in a previously requested legacy
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 10, 2025</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 13, 2025</span>
     </span>
     
 
