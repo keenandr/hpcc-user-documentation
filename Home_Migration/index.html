@@ -378,15 +378,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vast-tips" class="md-nav__link">
+  <a href="#new-file-system-tips" class="md-nav__link">
     <span class="md-ellipsis">
       
-        VAST tips
+        New file system tips
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="VAST tips">
+    <nav class="md-nav" aria-label="New file system tips">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -6583,15 +6583,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vast-tips" class="md-nav__link">
+  <a href="#new-file-system-tips" class="md-nav__link">
     <span class="md-ellipsis">
       
-        VAST tips
+        New file system tips
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="VAST tips">
+    <nav class="md-nav" aria-label="New file system tips">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -6746,9 +6746,9 @@
 
 
 <h1 id="home-migration">Home Migration</h1>
-<p>ICER is migrating to a new HPCC home file system called VAST, an all flash system that will enable fast access to files in your home spaces, and a significantly better working environment overall. Along with the migration, <strong>we are increasing <a href="../Home_Space/">the default home space size from 50 <abbr title="Gigabyte">GB</abbr> to 100 <abbr title="Gigabyte">GB</abbr></a> which will be a hard limit going forward to ensure that usage of home spaces is aligned with their intended purpose</strong>. To help accommodate these changes, we are increasing the maximum free research space per principal investigator from 1TB to 3TB. This move toward more research space storage will also enhance collaboration amongst your team.</p>
+<p>ICER is migrating to a new HPCC home file system <code>ffs24</code>, an all flash system that will enable fast access to files in your home spaces, and a significantly better working environment overall. Along with the migration, <strong>we are increasing <a href="../Home_Space/">the default home space size from 50 <abbr title="Gigabyte">GB</abbr> to 100 <abbr title="Gigabyte">GB</abbr></a> which will be a hard limit going forward to ensure that usage of home spaces is aligned with their intended purpose</strong>. To help accommodate these changes, we are increasing the maximum free research space per principal investigator from 1TB to 3TB. This move toward more research space storage will also enhance collaboration amongst your team.</p>
 <p>On this page, we have compiled a list of tips and questions that you may encounter throughout the transition.</p>
-<h2 id="vast-tips">VAST tips</h2>
+<h2 id="new-file-system-tips">New file system tips</h2>
 <h3 id="snapshots">Snapshots</h3>
 <p>Snapshots of your home directory will be taken periodically, and you now have the capability to restore your own files. To see all available snapshots of a directory, change to the <code>.snapshots</code> directory within any directory with the command</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>.snapshots
@@ -6757,8 +6757,8 @@
 <h2 id="migration-specifics">Migration specifics</h2>
 <h3 id="timeline">Timeline</h3>
 <ul>
-<li>Week of January 20th: we will begin migrating users with less than 100 <abbr title="Gigabyte">GB</abbr> of home directory usage to the VAST storage. Users will be notified before and after the migration.</li>
-<li>Later this semester: we will reach out to users above 100 <abbr title="Gigabyte">GB</abbr> with further tools and processes to help migrate to VAST. These users will receive a usage report showing their home directory usage. PIs will also receive team and research group usage. </li>
+<li>Week of January 20th: we will begin migrating users with less than 100 <abbr title="Gigabyte">GB</abbr> of home directory usage to the new <code>ffs24</code> storage. Users will be notified before and after the migration.</li>
+<li>Later this semester: we will reach out to users above 100 <abbr title="Gigabyte">GB</abbr> with further tools and processes to help migrate. These users will receive a usage report showing their home directory usage. PIs will also receive team and research group usage. </li>
 </ul>
 <h3 id="frequently-asked-questions">Frequently asked questions</h3>
 <h4 id="why-is-my-access-to-the-hpcc-disabled-during-migration">Why is my access to the HPCC disabled during migration?</h4>
@@ -6766,13 +6766,13 @@
 <h4 id="how-long-will-my-access-be-disabled-during-migration">How long will my access be disabled during migration?</h4>
 <p>Your access will be disabled early morning on your given time slot.  Your home directory will be 1 of many being migrated.  We will batch the migrations all at once.  While we expect that final sync to take only a few hours, it could take most of the day.  We will do our best to keep the time frame short and you will receive a confirmation email when your home directory migration is complete.</p>
 <h4 id="do-i-need-to-do-anything-to-migrate">Do I need to do anything to migrate?</h4>
-<p>If you are currently using less than 100GB in your home directory, you will not need to do anything, and the transition should appear seamless to you. If you are using more than 100GB, you will need to reduce your usage to be moved to the VAST system. We will reach out with further tools and processes later this semester to assist with the transition.</p>
+<p>If you are currently using less than 100GB in your home directory, you will not need to do anything, and the transition should appear seamless to you. If you are using more than 100GB, you will need to reduce your usage to be moved to the new <code>ffs24</code> system. We will reach out with further tools and processes later this semester to assist with the transition.</p>
 <h4 id="i-think-i-am-missing-files">I think I am missing files.</h4>
 <p>We are taking every precaution possible to prevent this.  While this is extremely unlikely, it is possible an error was made.  Create a ticket and we can look deeper.</p>
 <h4 id="i-need-to-use-the-hpcc-on-the-day-i-was-selected-to-migrate">I need to use the HPCC on the day I was selected to migrate.</h4>
 <p>That is fine.  Respond to the automated message and we will move you down the list for a different day or you can select one.</p>
 <h4 id="why-do-i-need-to-lower-my-quota">Why do I need to lower my quota?</h4>
-<p>The VAST system is more performant, but does not have as much space as the current home system. To accommodate reduced quota in home directories, we are encouraging users to move excess files to research spaces which will have the maximum free space per <abbr title="Principle Investigator">PI</abbr> raised from 1TB to 3TB.</p>
+<p>The new <code>ffs24</code> system is more performant, but does not have as much space as the current home system. To accommodate reduced quota in home directories, we are encouraging users to move excess files to research spaces which will have the maximum free space per <abbr title="Principle Investigator">PI</abbr> raised from 1TB to 3TB.</p>
 <!--
   Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
 
