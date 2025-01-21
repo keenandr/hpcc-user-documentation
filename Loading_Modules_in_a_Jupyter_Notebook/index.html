@@ -6524,9 +6524,9 @@ ln<span class="w"> </span>-s<span class="w"> </span>conda.sh<span class="w"> </s
 <p>Similarly to how the module system is made available to the bash shell, you can make the module system available in Python directly with an import statement. You will need to add the location of the module to your system path.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">sys</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;/usr/lmod/lmod/init&quot;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">env_modules_python</span> <span class="kn">import</span> <span class="n">module</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">env_modules_python</span><span class="w"> </span><span class="kn">import</span> <span class="n">module</span>
 </code></pre></div></td></tr></table></div>
 <p>After this, the <code>module</code> command can be used as a Python function:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>

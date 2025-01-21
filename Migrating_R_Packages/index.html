@@ -6697,7 +6697,7 @@ R
 <span class="normal">3</span>
 <span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nf">load</span><span class="p">(</span><span class="s">&quot;Rpackages&quot;</span><span class="p">)</span>
 <span class="n">new_packages</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">setdiff</span><span class="p">(</span><span class="n">packages</span><span class="p">,</span><span class="w"> </span><span class="nf">installed.packages</span><span class="p">()[,</span><span class="s">&quot;Package&quot;</span><span class="p">])</span>
-<span class="nf">for</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">new_packages</span><span class="p">)</span>
+<span class="kr">for</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">new_packages</span><span class="p">)</span>
 <span class="nf">install.packages</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>If you would like to check what packages will be installed before running the <code>install.packages()</code> for loop, you can look at <code>new_packages</code>.</p>

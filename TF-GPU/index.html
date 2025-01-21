@@ -6688,7 +6688,7 @@
 <h2 id="setup">Setup</h2>
 <p>Ensure you have the latest TensorFlow <abbr title="Graphics Processing Unit">GPU</abbr> release installed.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Num GPUs Available: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;GPU&#39;</span><span class="p">)))</span>
 </code></pre></div></td></tr></table></div>
 <p>TensorFlow can perform computations on different types of devices, including CPUs and GPUs. These devices are identified by specific names, such as <code>/device:CPU:0</code> for the <abbr title="Central Processing Unit">CPU</abbr> and <code>/GPU:0</code> for the first visible <abbr title="Graphics Processing Unit">GPU</abbr>, <code>CPU:1</code> and <code>GPU:1</code> for the second and so on.</p>
