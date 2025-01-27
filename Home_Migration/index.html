@@ -428,6 +428,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#problems-with-rstudio-server-starting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problems with RStudio Server starting
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6646,6 +6657,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#problems-with-rstudio-server-starting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problems with RStudio Server starting
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -6809,6 +6831,16 @@
 <h2 id="known-issues">Known issues</h2>
 <h3 id="drive-mapping-with-samba-not-available">Drive mapping with Samba not available</h3>
 <p><a href="../Mapping_HPC_drives_with_Samba/">Mapping HPC drives with Samba</a> is not currently available on the new home file system. ICER is working with the vendor to resolve this issue as soon as possible.</p>
+<h3 id="problems-with-rstudio-server-starting">Problems with RStudio Server starting</h3>
+<p>For some users, the home file system migration causes issues with RStudio Server's temporary files. This can result in RStudio Server not loading with the error message</p>
+<blockquote>
+<p>Could not connect to the R session on RStudio Server.</p>
+<p>Unable to connect to service (1)</p>
+</blockquote>
+<p>This can be resolved by moving RStudio's configuration files to a backup using the command line. Please log into a development node on the command line and run</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>mv<span class="w"> </span>~/.local/share/rstudio<span class="w"> </span>~/.local/share/rstudio.backup
+</code></pre></div></td></tr></table></div>
+<p>For more information, <a href="https://docs.icer.msu.edu/2024-08-12_RStudio_Server_Gray_Screen/">see our documentation about resolving similar errors with RStudio Server</a>.</p>
 <h2 id="migration-specifics">Migration specifics</h2>
 <h3 id="timeline">Timeline</h3>
 <ul>
@@ -6875,7 +6907,7 @@
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 16, 2025</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 27, 2025</span>
     </span>
     
 
