@@ -377,6 +377,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#compression-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compression differences
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -405,6 +414,15 @@
   <a href="#problems-with-rstudio-server-starting" class="md-nav__link">
     <span class="md-ellipsis">
       Problems with RStudio Server starting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permission-issues-using-conda-with-local-miniforge3-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permission issues using conda with local Miniforge3 installation
     </span>
   </a>
   
@@ -5614,6 +5632,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#compression-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compression differences
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5642,6 +5669,15 @@
   <a href="#problems-with-rstudio-server-starting" class="md-nav__link">
     <span class="md-ellipsis">
       Problems with RStudio Server starting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permission-issues-using-conda-with-local-miniforge3-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Permission issues using conda with local Miniforge3 installation
     </span>
   </a>
   
@@ -5787,6 +5823,9 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>.snapshots
 </code></pre></div></td></tr></table></div>
 <p>Note that this directory will not show up using <code>ls</code>, and does not count against your quota. You can copy any file from a given snapshot wherever you would like.</p>
+<h3 id="compression-differences">Compression differences</h3>
+<p>The old and new home file system manage automatic compression differently. On the old file system, the <code>quota</code> command reports the compressed size of files in your home directory. On the new file system, you will see the uncompressed size of files in your home directory. Research space quota reporting is not changed.</p>
+<p>If the uncompressed file sizes exceed your home directory quota, please move files to <a href="../Research_Space/">research spaces</a>.</p>
 <h2 id="known-issues">Known issues</h2>
 <h3 id="drive-mapping-with-samba-not-available">Drive mapping with Samba not available</h3>
 <p><a href="../Mapping_HPC_drives_with_Samba/">Mapping HPC drives with Samba</a> is not currently available on the new home file system. ICER is working with the vendor to resolve this issue as soon as possible.</p>
@@ -5800,6 +5839,13 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>mv<span class="w"> </span>~/.local/share/rstudio<span class="w"> </span>~/.local/share/rstudio.backup
 </code></pre></div></td></tr></table></div>
 <p>For more information, <a href="https://docs.icer.msu.edu/2024-08-12_RStudio_Server_Gray_Screen/">see our documentation about resolving similar errors with RStudio Server</a>.</p>
+<h3 id="permission-issues-using-conda-with-local-miniforge3-installation">Permission issues using conda with local Miniforge3 installation</h3>
+<p>If you have a local Miniforge3 installation in your home directory, after migrating, you may receive an error like</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">-bash conda: /mnt/ufs18/home-xxx/username/miniforge3/bin/python: bad interpreter: Permission denied</span>
+</code></pre></div></td></tr></table></div>
+<p>This is because during the original Miniforge installation, it set some paths as hardcoded to the old home directory system. These paths are read-only after the migration, so <code>conda</code> will not run.</p>
+<p>To fix this, we recommend <a href="../Using_conda/#using-the-miniforge3-module-quick-start-option">using the system Miniforge3 installation</a> by using <code>module load Miniforge3</code> instead of <code>module load Conda/3</code>. You can use the same environments you currently have installed.</p>
+<p>As an alternative, you can change the line at the top of the script giving permission errors to <a href="#will-the-path-to-my-home-directory-change">the full path of your migrated home directory</a>.</p>
 <h2 id="migration-specifics">Migration specifics</h2>
 <h3 id="timeline">Timeline</h3>
 <ul>
@@ -5866,7 +5912,7 @@
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 27, 2025</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2025</span>
     </span>
     
 
