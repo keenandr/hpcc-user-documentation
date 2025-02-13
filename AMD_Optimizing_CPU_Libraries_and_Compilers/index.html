@@ -1267,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Cluster_amd20_with_AMD_CPUs/" class="md-nav__link">
+      <a href="../Cluster_with_AMD_CPUs.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2323,6 +2323,18 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Optimizing for AMD CPUs
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -2333,6 +2345,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aocc-compilers" class="md-nav__link">
+    <span class="md-ellipsis">
+      AOCC Compilers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aocl-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      AOCL Libraries
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -5490,6 +5539,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aocc-compilers" class="md-nav__link">
+    <span class="md-ellipsis">
+      AOCC Compilers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aocl-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      AOCL Libraries
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5502,6 +5577,37 @@
                 
                   
 
+  <nav class="md-tags" >
+    
+      
+      
+        
+        
+      
+      
+        <a href="../tags/#tag:amd" class="md-tag md-tag-icon">AMD</a>
+      
+    
+      
+      
+        
+        
+      
+      
+        <a href="../tags/#tag:compilers" class="md-tag md-tag-icon">compilers</a>
+      
+    
+      
+      
+        
+        
+      
+      
+        <a href="../tags/#tag:reference" class="md-tag md-tag-icon">reference</a>
+      
+    
+  </nav>
+
 
   
     <a href="https://gitlab.msu.edu/icer/public-documentation/-/tree/main/docs/AMD_Optimizing_CPU_Libraries_and_Compilers.md" title="Edit this page" class="md-content__button md-icon">
@@ -5513,46 +5619,34 @@
 
 
 <h1 id="amd-optimizing-cpu-libraries-and-compilers">AMD Optimizing <abbr title="Central Processing Unit">CPU</abbr> Libraries and Compilers</h1>
-<p>With the purchase of amd20 cluster, we've installed AOCC (AMD Optimizing
+<p>For our <code>amd</code> <a href="../Cluster_Resources/">clusters</a>, we've installed the AOCC (AMD Optimizing
 C/C++ Compiler) compiler system and AOCL (AMD Optimizing <abbr title="Central Processing Unit">CPU</abbr> Libraries)
 on the HPCC system. Here we introduce how to use the installed compilers
 and libraries.</p>
-<p>Based on LLVM 10.0 release, AMD compilers use the commands clang,
-clang++ and flang to compile c, c++ and fortran codes respectively.
-Users can simply load an AOCC module and use the command directly. To
-find out the version of AOCC installed in HPCC, please run the following
-command on a dev node. All modules should be able to load directly.</p>
+<h2 id="aocc-compilers">AOCC Compilers</h2>
+<p>AMD is based on the LLVM compilers use and the commands <code>clang</code>,
+<code>clang++</code> and <code>flang</code> to compile C, C++ and Fortran codes respectively.
+To find out the version of AOCC installed in HPCC, please run the following
+command on a dev node.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w"> </span>module<span class="w"> </span>spider<span class="w"> </span>AOCC
 </code></pre></div></td></tr></table></div>
-<p>AOCL are a set of numerical libraries specifically tuned for the AMD
-EPYC processor family. The Libraries can work with either AOCC or <abbr title="GNU Compiler Collection">GCC</abbr>
-compilers. Users need to load a version of <abbr title="GNU Compiler Collection">GCC</abbr> or AOCC module before AOCL
-can be loaded. All available versions of AOCL can be found by running
-the following command on a dev node. Using AOCL on the new amd20 nodes
-is considered to provide better performance than using <abbr title="GNU Compiler Collection">GCC</abbr> compiled
-libraries (such as OpenBLAS, ScaLAPACK ...). User can find out how to
-use the libraries and the linkers from the 
-<a href="https://developer.amd.com/wp-content/resources/AOCL_User%20Guide_2.2.pdf">documentation</a>.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w"> </span>module<span class="w"> </span>spider<span class="w"> </span>AOCL
-</code></pre></div></td></tr></table></div>
-<p>Besides AOCC and AOCL, a version of OpenMPI compiled with AOCC
-(version 2.2.0) is also installed in case users would like to test <abbr title="Message Passing Interface">MPI</abbr>
-programs with AMD compilers. Users can simply load the <strong><code>aompi</code></strong>
-toolchain by running the following command on a dev node to load both
-AOCC and OpenMPI (version 4.0.3). </p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>ml<span class="w"> </span>-*<span class="w"> </span>aompi
-</code></pre></div></td></tr></table></div>
-<p>An <strong><code>aoacl</code></strong> toolchain is also available and able to load the triple
-modules: AOCC, OpenMPI and AOCL at a time.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We do not currently have the latest AOCL module installed. You must instead
-install and link from your home directory if you would like to use the
-latest AOCL with the latest AOCC.</p>
+<p>The AOCC compiler depends on the <abbr title="GNU Compiler Collection">GCC</abbr> toolchain as the compiler itself was
+compiled with <abbr title="GNU Compiler Collection">GCC</abbr>.</p>
 </div>
-<p>For more information, please see AMD's pages on
-<a href="https://www.amd.com/en/developer/aocc.html">AOCC</a> and
-<a href="https://www.amd.com/en/developer/aocl.html">AOCL</a>.</p>
+<h2 id="aocl-libraries">AOCL Libraries</h2>
+<p>AOCL are a set of numerical libraries specifically tuned for the AMD
+EPYC processor family. The version of the libraries installed were built with AOCC.
+All available versions of AOCL can be found by running
+the following command on a dev node. </p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w"> </span>module<span class="w"> </span>spider<span class="w"> </span>AOCL
+</code></pre></div></td></tr></table></div>
+<p>Using AOCL on the new amd20 nodes
+is likely to provide better performance than using <abbr title="GNU Compiler Collection">GCC</abbr> compiled
+libraries (such as OpenBLAS, ScaLAPACK ...). User can find out how to
+use the libraries and the linkers from the 
+<a href="https://www.amd.com/content/dam/amd/en/documents/pdfs/developer/aocl/aocl-v4.0-ga-user-guide.pdf">AOCL User Guide</a>.</p>
 <!--
   Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5597,7 +5691,7 @@ latest AOCL with the latest AOCC.</p>
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 5, 2023</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2025</span>
     </span>
     
 
@@ -5621,7 +5715,7 @@ latest AOCL with the latest AOCC.</p>
             
         </span>
         <nav>
-            Andrew Fullard, Wang, Xiaoge, panchyni
+            Claire Kopenhafer, Wang, Xiaoge
         </nav>
     </span>
     

@@ -1172,6 +1172,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#maximum-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maximum Precision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#connection-type" class="md-nav__link">
     <span class="md-ellipsis">
       Connection Type
@@ -1343,7 +1352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Cluster_amd20_with_AMD_CPUs/" class="md-nav__link">
+      <a href="../Cluster_with_AMD_CPUs.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -5568,6 +5577,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#maximum-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maximum Precision
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#connection-type" class="md-nav__link">
     <span class="md-ellipsis">
       Connection Type
@@ -5648,11 +5666,34 @@
 <th><abbr title="Graphics Processing Unit">GPU</abbr> Memory</th>
 <th>Architecture</th>
 <th>Compute Capability</th>
+<th>Maximum Precision</th>
 <th>Connection Type</th>
 <th>NVLink</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>h200</code></td>
+<td>amd24</td>
+<td>4 or 8</td>
+<td>141 <abbr title="Gigabyte">GB</abbr></td>
+<td>Hopper</td>
+<td>9.0</td>
+<td>Double (64-bit)</td>
+<td>SXM</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>l40s</code></td>
+<td>amd24</td>
+<td>8</td>
+<td>48 <abbr title="Gigabyte">GB</abbr></td>
+<td>Ada Lovelace</td>
+<td>8.9</td>
+<td><strong>Single (32-bit)</strong></td>
+<td>PCIe</td>
+<td>No</td>
+</tr>
 <tr>
 <td><code>a100</code></td>
 <td>amd21*</td>
@@ -5660,6 +5701,7 @@
 <td>81920 <abbr title="Megabyte">MB</abbr></td>
 <td>Ampere</td>
 <td>8.0</td>
+<td>Double (64-bit)</td>
 <td>SXM</td>
 <td>Yes</td>
 </tr>
@@ -5670,6 +5712,7 @@
 <td>40960 <abbr title="Megabyte">MB</abbr></td>
 <td>Ampere</td>
 <td>8.0</td>
+<td>Double (64-bit)</td>
 <td>PCIe</td>
 <td>No</td>
 </tr>
@@ -5680,6 +5723,7 @@
 <td>32768 <abbr title="Megabyte">MB</abbr></td>
 <td>Volta</td>
 <td>7.0</td>
+<td>Double (64-bit)</td>
 <td>PCIe</td>
 <td>Mixed</td>
 </tr>
@@ -5690,6 +5734,7 @@
 <td>32768 <abbr title="Megabyte">MB</abbr></td>
 <td>Volta</td>
 <td>7.0</td>
+<td>Double (64-bit)</td>
 <td>PCIe</td>
 <td>Yes</td>
 </tr>
@@ -5700,16 +5745,20 @@
 <td>12206 <abbr title="Megabyte">MB</abbr></td>
 <td>Kepler</td>
 <td>3.7</td>
+<td>Double (64-bit)</td>
 <td>PCIe</td>
 <td>No</td>
 </tr>
 </tbody>
 </table>
-<p>*The amd21 cluster contains some nodes that belong the to <a href="../Data_Machine/">Data Machine</a>.</p>
+<p>*The amd21 cluster contains some nodes that belong to the <a href="../Data_Machine/">Data Machine</a>.</p>
 <h2 id="architecture-compute-capability">Architecture &amp; Compute Capability</h2>
 <p>Currently, all of the HPCC's GPUs are manufactured by NVIDIA. They are designed following multiple <strong>architectures</strong>. Knowing a <abbr title="Graphics Processing Unit">GPU</abbr>'s architecture aids in researching their technical specifications. A <abbr title="Graphics Processing Unit">GPU</abbr>'s architecture is abbreviated in it's name; for example, the V100 GPUs follow the Volta architecture. </p>
 <p>Specific architectures and models of GPUs are able to meet certain <strong>compute capabilities</strong> (CC): sets of features that applications can leverage when executing on that <abbr title="Graphics Processing Unit">GPU</abbr>. Newer GPUs offer more advanced features and therefore adhere to a newer version of NVIDIA's compute capabilities. An explanation of what features are available for each compute capability can be found on both as part of the <a href="https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#compute-capability"><abbr title="Compute Unified Device Architecture (GPU programming)">CUDA</abbr> documentation</a> (CC &gt; 5.0 only) and compiled on <a href="https://en.wikipedia.org/wiki/CUDA#Version_features_and_specifications">Wikipedia</a>.</p>
 <p>Developers may use the <abbr title="Compute Unified Device Architecture (GPU programming)">CUDA</abbr> programming language to utilize our GPUs in their software applications. See our page on <a href="../Compiling_for_GPUs/">Compiling for GPUs</a> for more information on which versions of <abbr title="Compute Unified Device Architecture (GPU programming)">CUDA</abbr> may be used for each of the HPCC's GPUs and their respective compute capabilities.</p>
+<h2 id="maximum-precision">Maximum Precision</h2>
+<p>Real numbers are represented in binary following the IEEE floating point specifications. Numbers can be represented using different numbers of bits;more bits offer more precision at the cost of using more memory. Most scientific calculations use "double precision" or 64 bits as the standard.
+Real numbers represented with 64 bits are accurate to about about 15 decimal places, with the exact accuracy depending on the number being represented. Sometimes calculations do not need this level of precision and can make use of less expensive <abbr title="Graphics Processing Unit">GPU</abbr> hardware that is only capable of performing "single precision" or 32 bit calculations. <strong>Be aware that real numbers represented with 32 bits are only accurate to about 7 decimal places.</strong></p>
 <h2 id="connection-type">Connection Type</h2>
 <p>Most of the HPCC's GPUs communicate with the CPUs of their host node via the PCIe (Peripheral Component Interconnect Express) bus.
 This bus is the primary channel by which data and instructions are transferred to and from the <abbr title="Graphics Processing Unit">GPU</abbr>. As such, the speed of this bus
@@ -5763,7 +5812,7 @@ which offer higher connection speeds. Research the specifications of the particu
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2025</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2025</span>
     </span>
     
 

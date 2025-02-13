@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../Getting_Started_with_Grace_Hopper_and_Grace_Grace/">
-      
-      
-        <link rel="next" href="../Linux_Shell/">
       
       
       <link rel="icon" href="../assets/icer-small-logo-white.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>AMD CPUs - MSU HPCC User Documentation</title>
+        <title>(2025-02-14) Lab Notebook: Beta Access to amd24 Cluster - MSU HPCC User Documentation</title>
       
     
     
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#cluster-amd20-with-amd-cpus" class="md-skip">
+        <a href="#beta-access-to-the-amd24-cluster" class="md-skip">
           Skip to content
         </a>
       
@@ -147,7 +143,7 @@
           <div class="md-header__topic" data-md-component="header-topic">
             <span class="md-ellipsis">
               
-                AMD CPUs
+                (2025-02-14) Lab Notebook: Beta Access to amd24 Cluster
               
             </span>
           </div>
@@ -1030,19 +1026,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -1057,7 +1051,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             HPCC resources
@@ -1266,31 +1260,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    AMD CPUs
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Cluster_with_AMD_CPUs.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1300,35 +1273,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#basic-architecture-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic architecture information
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -5535,9 +5479,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#basic-architecture-information" class="md-nav__link">
+  <a href="#requesting-general-compute-nodes" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic architecture information
+      Requesting General Compute Nodes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requesting-buy-in-compute-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requesting Buy-In Compute Nodes
     </span>
   </a>
   
@@ -5557,9 +5510,24 @@
                 
                   
 
+  <nav class="md-tags" >
+    
+      
+      
+        
+        
+          
+        
+      
+      
+        <a href="../tags/#tag:lab-notebook" class="md-tag md-tag-icon md-tag--labnotes">lab notebook</a>
+      
+    
+  </nav>
+
 
   
-    <a href="https://gitlab.msu.edu/icer/public-documentation/-/tree/main/docs/Cluster_amd20_with_AMD_CPUs.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://gitlab.msu.edu/icer/public-documentation/-/tree/main/docs/2025-02-14_LabNotebook_amd24_beta_access.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -5567,42 +5535,33 @@
   
 
 
-<h1 id="cluster-amd20-with-amd-cpus">Cluster amd20 with AMD CPUs</h1>
-<p>In 2020, the HPCC purchased a new cluster <strong>amd20</strong> powered by AMD EPYC
-processors. Each <strong>amd20</strong> node has total 128 cores and at least 0.5 <abbr title="Terabyte">TB</abbr>
-<abbr title="Random Access Memory">RAM</abbr>. Each core has a base clock speed 2.6 GHz, up to 3.3 GHz. </p>
-<h3 id="basic-architecture-information">Basic architecture information</h3>
-<p>The AMD <abbr title="Central Processing Unit">CPU</abbr> contains 2 sockets with <abbr title="Central Processing Unit">CPU</abbr> packages with 4 NUMA nodes in
-each socket, and 16 cores in each NUMA node. Each NUMA core contains two
-"Core Complex Dies", which have two four-core "Core-Complex" modules.
-Each four-core Core-Complex shares a 16 <abbr title="Megabyte">MB</abbr> L3 cache.</p>
-<p><img alt="Photograph of a 7002 series AMD processor." src="../attachments/49152003/50692206.png" /></p>
-<p>A 7002 series processor (via AMD)</p>
-<p><img alt="A logical diagram of the processor Core-Complex." src="../attachments/49152003/50692207.png" /></p>
-<p>A Core-Complex (via AMD) logical diagram.</p>
-<p><img alt="A diagram showing the layout of an entire amd20 node." src="../attachments/49152003/50692205.png" /></p>
-<p>A 1 <abbr title="Terabyte">TB</abbr> amd20 node.</p>
-<p>Generally, cores within the same L3 cache have the lowest latency,
-followed by in-NUMA cores, other cores on the same socket, and cores on
-the other socket are slower. The SLURM job scheduler on the HPCC will
-try to keep within the same NUMA node by default. One option to try
-during testing is to use <abbr title="Open Multi-Processing">OpenMP</abbr> within the L3 node, and <abbr title="Message Passing Interface">MPI</abbr> for
-everything else. When using newer versions of OpenMPI, you can use the
-following argument with OMP_NUM_THREADS=4 to distribute one 4-thread
-rank per L3:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>mpirun<span class="w"> </span>-map-by<span class="w"> </span>ppr:1:l3cache:pe<span class="o">=</span><span class="m">4</span><span class="w"> </span>--bind-to<span class="w"> </span>core
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is as a <strong>Lab Notebook</strong> which describes how to solve a specific problem at a specific time.
+Please keep this in mind as you read and use the content. Please pay close attention to the date, version
+information and other details.</p>
+</div>
+<h1 id="beta-access-to-the-amd24-cluster">Beta Access to the <code>amd24</code> Cluster</h1>
+<p>The <a href="../Cluster_Resources/">amd24 cluster</a> is now available for beta access. This means jobs will not run on
+the new cluster's hardware unless requested. The way to request access depends on whether you want to access
+a general compute node or a node that belongs to a buy-in.</p>
+<p>Please note that the typical restriction on the number of cores in use by a single user at any one time
+will be increased from 1040 cores to 8256 cores for the beta period.</p>
+<h2 id="requesting-general-compute-nodes">Requesting General Compute Nodes</h2>
+<p>To request a general compute node, users must specify the <code>beta</code> <strong>SLURM account</strong>. This can be done via the
+<code>#SBATCH --account=beta</code> option in SLURM scripts or through the "SLURM account" field under "Advanced Options"
+when requesting an OnDemand job.</p>
+<h2 id="requesting-buy-in-compute-nodes">Requesting Buy-In Compute Nodes</h2>
+<p>To access the new hardware associated with your buy-in, users must specify both their buyin account
+(e.g. <code>#SBATCH --account=&lt;buyin&gt;</code> in a SLURM script) and the <code>beta</code> <strong>reservation</strong>.</p>
+<p>In a SLURM script, this combination looks like</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">#SBATCH --account=&lt;buyin&gt;</span>
+<span class="c1">#SBATCH --reservation=beta</span>
 </code></pre></div></td></tr></table></div>
-<p>In testing, the Intel Compiler and MKL toolchain works well if you
-“export MKL_DEBUG_CPU_TYPE=5” and compile for AVX2 instead of AVX512.</p>
-<p>If you’re doing single-node scaling work, be aware of memory bandwidth;
-on these nodes, HPL scales from 1-96 cores linearly but only 3.5 -&gt; 4
-TF from 96-&gt;128 when going from 3 cores per L3 to 4.</p>
-<p>Each node has a 100 gigabit HDR100 connection. There are 52-56 nodes per
-switch:</p>
-<p><img alt="A network diagram of the amd20 nodes showing 4 clusters of nodes." src="../attachments/49152003/50692211.png" /></p>
-<p>Resources:</p>
-<p><a href="https://www.amd.com/en/server-docs/high-performance-computing-hpc-tuning-guide-for-amd-epyc-7002-series-processors">High Performance Computing: Tuning Guide for AMD EPYC™ 7002 Series Processors</a></p>
-<p><a href="https://www.amd.com/en/support/tech-docs/compiler-options-quick-reference-guide-for-amd-epyc-7xx3-series-processors">Compiler Options Quick Ref Guide for AMD EPYC 7xx2 Series Processors</a></p>
+<p>where <code>&lt;buyin&gt;</code> is replaced with your respective buy-in account name.</p>
+<p>For OnDemand jobs, the "SLURM Account" and "SLURM Reservation" fields can be found by checking the
+"Advanced Options" box when specifying app resources.</p>
 <!--
   Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5647,7 +5606,7 @@ switch:</p>
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2024</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2025</span>
     </span>
     
 
@@ -5657,7 +5616,7 @@ switch:</p>
         <span class="md-icon" title="Created">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 23, 2022</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2025</span>
     </span>
     
 
@@ -5667,11 +5626,11 @@ switch:</p>
     <span class="md-source-file__fact">
         <span class="md-icon" title="Contributors">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.54 5.54 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13zM0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20zm24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
             
         </span>
         <nav>
-            Andrew Fullard, Wang, Xiaoge, panchyni
+            Claire Kopenhafer
         </nav>
     </span>
     
@@ -5717,7 +5676,7 @@ switch:</p>
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1z_oYtR7cRf8zuyZwk_Pz-_KosCpq0jCWfsegP1XlZUnx1w/viewform?usp=pp_url&entry.1784336917=AMD%20CPUs" target="_blank" rel="noopener">feedback form</a>. Make sure you are logged in to your MSU google account.
+              Thanks for your feedback! Help us improve this page by using our <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1z_oYtR7cRf8zuyZwk_Pz-_KosCpq0jCWfsegP1XlZUnx1w/viewform?usp=pp_url&entry.1784336917=%282025-02-14%29%20Lab%20Notebook%3A%20Beta%20Access%20to%20amd24%20Cluster" target="_blank" rel="noopener">feedback form</a>. Make sure you are logged in to your MSU google account.
             </div>
           
         </div>
