@@ -5551,7 +5551,7 @@
         
       
       
-        <a href="../Lab_Notebooks/#tag:lab-notebook" class="md-tag md-tag-icon md-tag--labnotes">lab notebook</a>
+        <a href="../tags/#tag:lab-notebook" class="md-tag md-tag-icon md-tag--labnotes">lab notebook</a>
       
     
       
@@ -5585,18 +5585,18 @@ information and other details.</p>
 </div>
 <h2 id="lab-notebook-installing-wrf-on-hpcc-using-easybuild-2023-02-07">Lab Notebook --- Installing WRF on HPCC using EasyBuild (2023-02-07)</h2>
 <h4 id="the-problem-as-of-easybuild-462">The Problem (as of EasyBuild 4.6.2)</h4>
-<p>Currently, the most recent versions of WRF (4.1 and later) cannot be successfully built by the most recent version of EasyBuild instlled on HPCC (4.6.2). As best I can tell, although EasyBuild is loads more recent versions of <abbr title="GNU Compiler Collection">GCC</abbr> and OpenMPI and uses them to build dependencies such as netCDF, something in WRF itself (I think) is configure so that when attempting to compile tests cases (i.e. "compile em_b_wave"), the versions of <abbr title="GNU Compiler Collection">GCC</abbr> and OpenMPI the automatically load on HPCC (6.4.0 and 2.1.2 respectively) are used.</p>
-<p>In my experience, this problem tends to manifiest in one of two ways: either EasyBuild will fail while trying to build one of the test cases due to a mismatch in compiler version with netCDF ("Fatal Error: Cannot read module file netcdf.mod opened at (1), because it was created by a different version of GNU Fortran") or elements of the test case will fail to build due to the older <abbr title="GNU Compiler Collection">GCC</abbr> complier not recognizing  the flag "-fallow-argument-mismatch" (gfortran: error: unrecognized command line option -fallow-argument-mismatch; did you mean -Wlto-type-mismatch?) which is believe is a 10+ flag for <abbr title="GNU Compiler Collection">GCC</abbr> (see https://gcc.gnu.org/gcc-10/changes.html). You will also probably see something like:</p>
+<p>Currently, the most recent versions of WRF (4.1 and later) cannot be successfully built by the most recent version of EasyBuild installed on HPCC (4.6.2). As best I can tell, although EasyBuild is loads more recent versions of <abbr title="GNU Compiler Collection">GCC</abbr> and OpenMPI and uses them to build dependencies such as netCDF, something in WRF itself (I think) is configure so that when attempting to compile tests cases (i.e. "compile em_b_wave"), the versions of <abbr title="GNU Compiler Collection">GCC</abbr> and OpenMPI the automatically load on HPCC (6.4.0 and 2.1.2 respectively) are used.</p>
+<p>In my experience, this problem tends to manifest in one of two ways: either EasyBuild will fail while trying to build one of the test cases due to a mismatch in compiler version with netCDF ("Fatal Error: Cannot read module file netcdf.mod opened at (1), because it was created by a different version of GNU Fortran") or elements of the test case will fail to build due to the older <abbr title="GNU Compiler Collection">GCC</abbr> compiler not recognizing  the flag "-fallow-argument-mismatch" (gfortran: error: unrecognized command line option -fallow-argument-mismatch; did you mean -Wlto-type-mismatch?) which is believe is a 10+ flag for <abbr title="GNU Compiler Collection">GCC</abbr> (see https://gcc.gnu.org/gcc-10/changes.html). You will also probably see something like:</p>
 <p>Serial Fortran compiler (mostly for tool generation):
 which SFC
 /opt/software/GCCcore/6.4.0/bin/gfortran</p>
 <p>In the output or log file when trying to compile a test case.</p>
 <h4 id="current-solution">Current Solution</h4>
 <p>Currently, the best solution is to use an older version of EasyBuid (4.5.0) which can be loaded via "module load EasyBuild/4.5.0". This approach has been tested and works out of the box for WRF 4.1.3, 4.2.2, and 4.3.</p>
-<p>However, older (3.6.X) versions of WRF may require an even older verion of EasyBuild, but their remains problem with this approach realted to folder accesibility [TBD, consult with Andrew and Xaioge]</p>
+<p>However, older (3.6.X) versions of WRF may require an even older version of EasyBuild, but their remains problem with this approach related to folder accessibility [TBD, consult with Andrew and Xaioge]</p>
 <h4 id="notes-and-future-considerations">Notes and Future Considerations</h4>
-<p>I am neither well versed in Fortran nor WRF, so the above is a compilation of my observation of trying to get WRF intalled along with a little reserach along the way. As a Lab Notebook, this primarily serves as a reference point and installing WRF should probably be revisited if and when EasyBuild is updated (4.7.0 was released recently)</p>
-<p>Update (2-8-2023): Installed EasyBuild 4.7.0, same issues as 4.6.2. need to follow up with additional confgiuration mentioned by Xiaoge</p>
+<p>I am neither well versed in Fortran nor WRF, so the above is a compilation of my observation of trying to get WRF installed along with a little research along the way. As a Lab Notebook, this primarily serves as a reference point and installing WRF should probably be revisited if and when EasyBuild is updated (4.7.0 was released recently)</p>
+<p>Update (2-8-2023): Installed EasyBuild 4.7.0, same issues as 4.6.2. need to follow up with additional configuration mentioned by Xiaoge</p>
 <!--
   Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5641,7 +5641,7 @@ which SFC
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 4, 2023</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
     </span>
     
 
@@ -5661,11 +5661,11 @@ which SFC
     <span class="md-source-file__fact">
         <span class="md-icon" title="Contributors">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.54 5.54 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13zM0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20zm24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9z"/></svg>
             
         </span>
         <nav>
-            panchyni
+            Craig Gross, panchyni
         </nav>
     </span>
     

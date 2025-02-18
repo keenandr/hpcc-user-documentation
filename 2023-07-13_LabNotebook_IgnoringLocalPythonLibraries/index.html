@@ -5479,9 +5479,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example-useage-running-alphafold-from-a-singularity-container" class="md-nav__link">
+  <a href="#example-usage-running-alphafold-from-a-singularity-container" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Useage: Running AlphaFold from a Singularity container
+      Example Usage: Running AlphaFold from a Singularity container
     </span>
   </a>
   
@@ -5511,7 +5511,7 @@
         
       
       
-        <a href="../Lab_Notebooks/#tag:lab-notebook" class="md-tag md-tag-icon md-tag--labnotes">lab notebook</a>
+        <a href="../tags/#tag:lab-notebook" class="md-tag md-tag-icon md-tag--labnotes">lab notebook</a>
       
     
       
@@ -5551,12 +5551,12 @@ Please keep this in mind as you read and use the content. Please pay close atten
 information and other details.</p>
 </div>
 <h1 id="lab-notebook-ignoring-local-python-libraries-2023-07-13">Lab Notebook --- Ignoring Local Python Libraries (2023-07-13)</h1>
-<p>Python will automatically populate the internal "sys.path" variable with the location of package libraries. One such location is the .local/lib folder of your home directory on HPCC, provided that the python folder there corresponds to python version being used (i.e. python3.6 for running any Python 3.6.x version). This can create conflicts with containerized software (such as Singularity containters) and (potentially) other python environments like conda by causing python to try and load a module from .local/lib instead of the intended source.</p>
-<p>In principle, this should not cause a problem if .local/lib is low enough on the load order in sys.path, but in practice this is not always the case. Since there is not benefit to having these additional libaries in sys.path from running something Singularity, the issue can be avoided by excluding the .local/lib path from sys.path.</p>
+<p>Python will automatically populate the internal "sys.path" variable with the location of package libraries. One such location is the .local/lib folder of your home directory on HPCC, provided that the python folder there corresponds to python version being used (i.e. python3.6 for running any Python 3.6.x version). This can create conflicts with containerized software (such as Singularity containers) and (potentially) other python environments like conda by causing python to try and load a module from .local/lib instead of the intended source.</p>
+<p>In principle, this should not cause a problem if .local/lib is low enough on the load order in sys.path, but in practice this is not always the case. Since there is not benefit to having these additional libraries in sys.path from running something Singularity, the issue can be avoided by excluding the .local/lib path from sys.path.</p>
 <p>To have python ignore the .local/lib folder when populating sys.path, you can set the following environment variable:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PYTHONNOUSERSITE</span><span class="o">=</span><span class="m">1</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="example-useage-running-alphafold-from-a-singularity-container">Example Useage: Running AlphaFold from a Singularity container</h2>
+<h2 id="example-usage-running-alphafold-from-a-singularity-container">Example Usage: Running AlphaFold from a Singularity container</h2>
 <p>HPCC has versions of AlphaFold available as Singularity containers (such as /opt/software/alphafold/2.0.0/alphafold.sif). These containers run Python 3.8.x and if you have a .local/lib/python38 folder, you may face an error like the following:</p>
 <p><img alt="" src="../attachments/SingularityLocalLibraryError.png" /></p>
 <p>Setting PYTHONNOUSERSITE as above should resolve this issue</p>
@@ -5604,7 +5604,7 @@ information and other details.</p>
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 19, 2023</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
     </span>
     
 
@@ -5624,11 +5624,11 @@ information and other details.</p>
     <span class="md-source-file__fact">
         <span class="md-icon" title="Contributors">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.54 5.54 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13zM0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20zm24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9z"/></svg>
             
         </span>
         <nav>
-            panchyni
+            Craig Gross, panchyni
         </nav>
     </span>
     

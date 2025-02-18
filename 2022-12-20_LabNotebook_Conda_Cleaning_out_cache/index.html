@@ -16,7 +16,7 @@
     
     
       
-        <title>(2022-12-20) Lab Notebook: Conda --- Cleanning out your cache on HPCC - MSU HPCC User Documentation</title>
+        <title>(2022-12-20) Lab Notebook: Conda --- Cleaning out your cache on HPCC - MSU HPCC User Documentation</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-notebook-cleanning-out-your-conda-cache-on-hpcc-2022-12-20" class="md-skip">
+        <a href="#lab-notebook-cleaning-out-your-conda-cache-on-hpcc-2022-12-20" class="md-skip">
           Skip to content
         </a>
       
@@ -143,7 +143,7 @@
           <div class="md-header__topic" data-md-component="header-topic">
             <span class="md-ellipsis">
               
-                (2022-12-20) Lab Notebook: Conda --- Cleanning out your cache on HPCC
+                (2022-12-20) Lab Notebook: Conda --- Cleaning out your cache on HPCC
               
             </span>
           </div>
@@ -5477,13 +5477,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lab-notebook-cleanning-out-your-conda-cache-on-hpcc-2022-12-20" class="md-nav__link">
+  <a href="#lab-notebook-cleaning-out-your-conda-cache-on-hpcc-2022-12-20" class="md-nav__link">
     <span class="md-ellipsis">
-      Lab Notebook --- Cleanning out your Conda Cache on HPCC (2022-12-20)
+      Lab Notebook --- Cleaning out your Conda Cache on HPCC (2022-12-20)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Lab Notebook --- Cleanning out your Conda Cache on HPCC (2022-12-20)">
+    <nav class="md-nav" aria-label="Lab Notebook --- Cleaning out your Conda Cache on HPCC (2022-12-20)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5542,7 +5542,7 @@
         
       
       
-        <a href="../Lab_Notebooks/#tag:lab-notebook" class="md-tag md-tag-icon md-tag--labnotes">lab notebook</a>
+        <a href="../tags/#tag:lab-notebook" class="md-tag md-tag-icon md-tag--labnotes">lab notebook</a>
       
     
       
@@ -5566,7 +5566,7 @@
   
 
 
-  <h1>(2022-12-20) Lab Notebook: Conda --- Cleanning out your cache on HPCC</h1>
+  <h1>(2022-12-20) Lab Notebook: Conda --- Cleaning out your cache on HPCC</h1>
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -5574,22 +5574,22 @@
 Please keep this in mind as you read and use the content. Please pay close attention to the date, version
 information and other details.</p>
 </div>
-<h2 id="lab-notebook-cleanning-out-your-conda-cache-on-hpcc-2022-12-20">Lab Notebook --- Cleanning out your Conda Cache on HPCC (2022-12-20)</h2>
+<h2 id="lab-notebook-cleaning-out-your-conda-cache-on-hpcc-2022-12-20">Lab Notebook --- Cleaning out your Conda Cache on HPCC (2022-12-20)</h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>EXTRA WARNING: This process is MOSTLY safe in that the deafult behavior of conda is to hardlink from enviroments to the packages, so if packages are removed from the conda cache, it will not affect the environment. However, if you have enable softlinking with conda (by setting  allow_softlinks or always_softlinks in your config) or manually soflinked to files/folders in the packages directory, this WILL break those links. For a discussion of why this process is MOSTLY safe, see the following links:</p>
+<p>EXTRA WARNING: This process is MOSTLY safe in that the default behavior of conda is to hardlink from environments to the packages, so if packages are removed from the conda cache, it will not affect the environment. However, if you have enable softlinking with conda (by setting  allow_softlinks or always_softlinks in your config) or manually soflinked to files/folders in the packages directory, this WILL break those links. For a discussion of why this process is MOSTLY safe, see the following links:</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/56266229/     is-it-safe-to-manually-delete-all-files-in-pkgs-folder-in-anaconda-python/64005961#64005961">"Is it safe to manually delete all files in pkgs folder in anaconda python?" (Stackoverflow)</a></li>
 <li><a href="https://groups.google.com/a/anaconda.com/g/anaconda/c/xV1BiGPmgao">"Can I delete files in the pkgs directory after installation." (Anaconda Google Group)</a></li>
 </ul>
 </div>
-<p>Conda often creates many small files contributing to user's file quota on HPCC. A more permenant solution for this problem can be found using <a href="../2022-09-24_LabNotebook_Singularity_Overlays/">Singularity overlays</a>, but as of the time of writing, Sigularity overlays remains something of a work in progress. Hence, this guide is meant to provide an interm solution by outling ways of cleaning out some of the extraneous files produced by Conda.</p>
+<p>Conda often creates many small files contributing to user's file quota on HPCC. A more permanent solution for this problem can be found using <a href="../2022-09-24_LabNotebook_Singularity_Overlays/">Singularity overlays</a>, but as of the time of writing, Singularity overlays remains something of a work in progress. Hence, this guide is meant to provide an interim solution by outlining ways of cleaning out some of the extraneous files produced by Conda.</p>
 <h4 id="conda-clean">Conda clean</h4>
-<p>The command 'conda clean' can be used to clean out uneeded packages in the 'pkgs' cachce folder. Full options for this command can be found <a href="https://docs.conda.io/projects/conda/en/latest/commands/clean.html">here</a>, but the simplest options are to either remove all <strong>unused</strong> packages with:</p>
+<p>The command 'conda clean' can be used to clean out unneeded packages in the 'pkgs' cache folder. Full options for this command can be found <a href="https://docs.conda.io/projects/conda/en/latest/commands/clean.html">here</a>, but the simplest options are to either remove all <strong>unused</strong> packages with:</p>
 <p><code>conda clean -p</code></p>
 <p>Or remove <strong>ALL</strong> packages with:</p>
 <p><code>conda clean -a</code></p>
-<p>Again, this should have no affect on hard-link enviroments installed under normal circumstances, however if there is any doubts consider making a backup of existing, important python environments <a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#sharing-an-environment">as .yaml files which can be used to reinstalling enviroments</a> or other options to reduce file count such as archiving old/unsued files and directories.</p>
+<p>Again, this should have no affect on hard-link environments installed under normal circumstances, however if there is any doubts consider making a backup of existing, important python environments <a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#sharing-an-environment">as .yaml files which can be used to reinstalling environments</a> or other options to reduce file count such as archiving old/unused files and directories.</p>
 <!--
   Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
 
@@ -5634,7 +5634,7 @@ information and other details.</p>
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 4, 2023</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
     </span>
     
 
@@ -5704,7 +5704,7 @@ information and other details.</p>
               
                 
               
-              Thanks for your feedback! Help us improve this page by using our <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1z_oYtR7cRf8zuyZwk_Pz-_KosCpq0jCWfsegP1XlZUnx1w/viewform?usp=pp_url&entry.1784336917=%282022-12-20%29%20Lab%20Notebook%3A%20Conda%20---%20Cleanning%20out%20your%20cache%20on%20HPCC" target="_blank" rel="noopener">feedback form</a>. Make sure you are logged in to your MSU google account.
+              Thanks for your feedback! Help us improve this page by using our <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1z_oYtR7cRf8zuyZwk_Pz-_KosCpq0jCWfsegP1XlZUnx1w/viewform?usp=pp_url&entry.1784336917=%282022-12-20%29%20Lab%20Notebook%3A%20Conda%20---%20Cleaning%20out%20your%20cache%20on%20HPCC" target="_blank" rel="noopener">feedback form</a>. Make sure you are logged in to your MSU google account.
             </div>
           
         </div>

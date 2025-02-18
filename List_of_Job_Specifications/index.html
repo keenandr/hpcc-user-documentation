@@ -5786,7 +5786,7 @@ a SLURM job is running. </p>
 <tbody>
 <tr>
 <td><code>-a</code>,<br/><code>--array=&lt;indexes&gt;</code></td>
-<td>Submit a job array with multiple jobs to be executed; that is, a group of jobs requiring the same set of resourcs. Each job has the same job ID (<code>$SLURM_JOB_ID</code>) but different array ID (<code>$SLURM_ARRAY_TASK_ID</code>). The <code>indexes</code> passed to the argument identify what array ID values should be used.<p>The indicies can be a mix of lists or ranges. A <code>:</code> can be used to identify the step for a range. The <code>%</code> separator specifies the maximum number of jobs running simultaneously.</td>
+<td>Submit a job array with multiple jobs to be executed; that is, a group of jobs requiring the same set of resources. Each job has the same job ID (<code>$SLURM_JOB_ID</code>) but different array ID (<code>$SLURM_ARRAY_TASK_ID</code>). The <code>indexes</code> passed to the argument identify what array ID values should be used.<p>The indices can be a mix of lists or ranges. A <code>:</code> can be used to identify the step for a range. The <code>%</code> separator specifies the maximum number of jobs running simultaneously.</td>
 <td><code>#SBATCH -a 0-15</code>,<br/><code>#SBATCH -a 0,6,16-32</code>,<br/><code>#SBATCH -a 0-15:4</code> (same as <code>#SBATCH –a 0,4,8,12</code>),<br/><code>#SBATCH --array=0-15%4</code> (max 4 jobs running simultaneously)</td>
 </tr>
 <tr>
@@ -5938,7 +5938,7 @@ By default, standard output and error are combined into the same <code>output</c
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 9, 2025</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
     </span>
     
 

@@ -5702,7 +5702,7 @@ Alternatively, users may set up <a href="../An_SSH_tunneling_via_multiple_hops/"
 to a development node.</p>
 <h3 id="rsync-nodes">Rsync Nodes</h3>
 <p>These nodes are accessed via <code>ssh &lt;username&gt;@rsync.hpcc.msu.edu</code> as in the bottom fork of the diagram above. Unlike the gateway nodes,
-the <a href="../Scratch_File_Systems/">scratch file system</a> is accessbile from the rsync nodes. This is because these nodes are
+the <a href="../Scratch_File_Systems/">scratch file system</a> is accessible from the rsync nodes. This is because these nodes are
 primarily intended for file transfer. Large amounts of data should be transferred via the rsync nodes to avoid slowing down the gateway nodes.</p>
 <p>These nodes are named for the popular command line file transfer utility <code>rsync</code>.
 Users can use this utility to transfer files via the rsync gateway by following this command pattern: <code>rsync &lt;local path&gt; &lt;username&gt;@rsync.hpcc.msu.edu:&lt;remote path&gt;</code>. Other commands such as <code>scp</code> may also be used with the rsync gateway, or a <abbr title="Graphic User Interface">GUI</abbr> such as <a href="../Intro_to_MobaXterm/">MobaXterm</a> may be used instead.</p>

@@ -5538,7 +5538,7 @@
         
       
       
-        <a href="../Lab_Notebooks/#tag:lab-notebook" class="md-tag md-tag-icon md-tag--labnotes">lab notebook</a>
+        <a href="../tags/#tag:lab-notebook" class="md-tag md-tag-icon md-tag--labnotes">lab notebook</a>
       
     
       
@@ -5716,7 +5716,7 @@ module load AlphaFold/2.3.2-GCCcore-13.2.0-singularity
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">output_dir</span><span class="o">=</span>&lt;some_output_folder&gt;<span class="w"> </span><span class="c1"># Set the output directory as a enviroment variable as this is what the script expects</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">output_dir</span><span class="o">=</span>&lt;some_output_folder&gt;<span class="w"> </span><span class="c1"># Set the output directory as a environment variable as this is what the script expects</span>
 
 python3<span class="w"> </span><span class="si">${</span><span class="nv">ALPHAFOLD_DIR</span><span class="si">}</span>/run_singularity.py<span class="w"> </span><span class="se">\ </span>
 <span class="w">    </span>--use_gpu<span class="w"> </span><span class="se">\ </span><span class="c1">#Use the GPU, which makes the neural network calculations faster</span>
@@ -5728,8 +5728,8 @@ python3<span class="w"> </span><span class="si">${</span><span class="nv">ALPHAF
 <span class="w">    </span>--db_preset<span class="o">=</span>reduced_dbs<span class="w"> </span><span class="c1">#Use the reduced database</span>
 </code></pre></div></td></tr></table></div>
 <p>Note that any of the flags <a href="https://github.com/google-deepmind/alphafold#running-alphafold">normally passed to AlphaFold should</a> be able to be passed through this script.</p>
-<p>Additionally, the --output_dir argument must be passed EXACTLY as above using an enviroment variable because the script expects an enviroment variable (i.e. the uses os.environ to fill in the outdir)</p>
-<p>If you would like to submit an AlphaFold job to SLURM, we have included an example script below. Note that you will need to adust the resource requests (mainly time) depending on the complexity of your protein.</p>
+<p>Additionally, the --output_dir argument must be passed EXACTLY as above using an environment variable because the script expects an environment variable (i.e. the uses os.environ to fill in the outdir)</p>
+<p>If you would like to submit an AlphaFold job to SLURM, we have included an example script below. Note that you will need to adjust the resource requests (mainly time) depending on the complexity of your protein.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -5791,7 +5791,7 @@ module<span class="w"> </span>load<span class="w"> </span>AlphaFold/2.3.2-GCCcor
 <span class="nb">echo</span><span class="w"> </span>INFO:<span class="w"> </span><span class="nv">ALPHAFOLD_DIR</span><span class="o">=</span><span class="nv">$ALPHAFOLD_DIR</span>
 <span class="nb">echo</span><span class="w"> </span>INFO:<span class="w"> </span><span class="nv">ALPHAFOLD_DATADIR</span><span class="o">=</span><span class="nv">$ALPHAFOLD_DATADIR</span>
 
-<span class="nb">export</span><span class="w"> </span><span class="nv">output_dir</span><span class="o">=</span><span class="nv">$SLURM_SUBMIT_DIR</span>/2023<span class="w"> </span><span class="c1"># you chnage this to whatever path you like</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">output_dir</span><span class="o">=</span><span class="nv">$SLURM_SUBMIT_DIR</span>/2023<span class="w"> </span><span class="c1"># you change this to whatever path you like</span>
 
 <span class="nb">cd</span><span class="w"> </span><span class="nv">$SLURM_SUBMIT_DIR</span>
 mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$output_dir</span>
@@ -5862,7 +5862,7 @@ python3<span class="w"> </span><span class="si">${</span><span class="nv">ALPHAF
         <span class="md-icon" title="Last update">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
         </span>
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2024</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2025</span>
     </span>
     
 
@@ -5882,11 +5882,11 @@ python3<span class="w"> </span><span class="si">${</span><span class="nv">ALPHAF
     <span class="md-source-file__fact">
         <span class="md-icon" title="Contributors">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.54 5.54 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13zM0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20zm24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9z"/></svg>
             
         </span>
         <nav>
-            panchyni
+            Craig Gross, panchyni
         </nav>
     </span>
     
